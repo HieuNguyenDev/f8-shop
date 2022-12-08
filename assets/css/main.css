@@ -9,22 +9,32 @@
 }
 
 .header__navbar-list {
+    margin: 4px 0 0 0;
     padding-left: 0;
     list-style: none;
+    display: flex;
 }
 
 .header__navbar-item {
     position: relative;
     margin: 0 8px;
+    min-height: 26px;
 }
 
 .header__navbar-item,
 .header__navbar-item-link {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--white-color);
     text-decoration: none;
     font-weight: 300;
+}
+
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon {
+    display: flex;
+    align-items: center;
 }
 
 .header__navbar-item:hover,
@@ -52,4 +62,14 @@
 .header__navbar-icon-link {
     color: var(--white-color);
     text-decoration: none;
+}
+
+.header__navbar-icon {
+    margin: 0 4px;
+    font-size: 1.8rem;
+}
+
+.header__navbar-title-no-pointer {
+    color: var(--white-color);
+    cursor: text;
 }
