@@ -9,8 +9,8 @@
 }
 
 .header__navbar-list {
-    list-style: none;
     padding-left: 0;
+    list-style: none;
 }
 
 .header__navbar-item {
@@ -27,6 +27,13 @@
     font-weight: 300;
 }
 
+.header__navbar-item:hover,
+.header__navbar-icon-link:hover,
+.header__navbar-item-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
 .header__navbar-item-link--strong {
     font-weight: 400;
 }
@@ -40,4 +47,9 @@
     transform: translateY(-50%);
     height: 16px;
     border: 1px solid #FB9086;
+}
+
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
 }
