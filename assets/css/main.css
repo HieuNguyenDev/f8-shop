@@ -134,10 +134,22 @@
     cursor: default;
     transform-origin: calc(100% - 20px) top;
     animation: headerNotifyGrowth ease-in 0.2s; 
+    will-change: transform, animation;
     display: none;
 }
 
 .header__notify::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: 4px;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+}
+
+.header__notify::after {
     content: "";
     display: block;
     position: absolute;
