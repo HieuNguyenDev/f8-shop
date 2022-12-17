@@ -2,6 +2,7 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
+    --primary-color: #EE4D2D;
 }
 
 * {
@@ -53,4 +54,29 @@ html {
 .modal__container {
     margin: auto;
     background-color: var(--white-color);
+    border-radius: 4px;
+}
+
+/* Button */
+.btn {
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    line-height: 36px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: #f1f1f1;
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
