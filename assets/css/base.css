@@ -40,6 +40,17 @@ html {
     }
 }
 
+@keyframes growth {
+    0% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* Modal Layout */
 .modal {
     position: fixed;
@@ -48,6 +59,12 @@ html {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn linear 0.1s;
+    cursor: pointer;
+    display: none;
+}
+
+.modal.open-modal {
     display: flex;
 }
 
@@ -55,28 +72,33 @@ html {
     margin: auto;
     background-color: var(--white-color);
     border-radius: 4px;
+    cursor: default;
+    animation: growth linear 0.2s;
 }
 
 /* Button */
 .btn {
     min-width: 142px;
-    height: 36px;
+    height: 34px;
     text-decoration: none;
     border: none;
     outline: none;
-    background-color: #fff;
+    background-color: transparent;
     color: #333;
     line-height: 36px;
     font-size: 1.4rem;
     cursor: pointer;
     user-select: none;
-}
-
-.btn:hover {
-    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn.btn--primary {
     background-color: var(--primary-color);
     color: var(--white-color);
+}
+
+.btn.btn--size-s {
+    height: 32px;
 }
