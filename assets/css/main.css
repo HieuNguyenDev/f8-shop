@@ -29,15 +29,19 @@
 }
 
 .header__navbar-user-img {
-    width: 22px;
-    margin-right: 8px;
+    width: 20px;
+    margin-right: 4px;
+}
+
+.header__navbar-user-name {
+    font-weight: 400;
 }
 
 .header__navbar-user-menu {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    width: 160px;
+    width: 140px;
     padding-left: 0;
     background-color: #fff;
     border-radius: 2px;
@@ -65,8 +69,8 @@
     content: "";
     position: absolute;
     top: -30px;
-    right: 10px;
-    border-width: 20px 24px;
+    right: 0;
+    border-width: 20px 28px;
     border-style: solid;
     border-color: transparent transparent #fff transparent;
 }
@@ -74,6 +78,10 @@
 .header__navbar-user-item:hover {
     cursor: pointer;
     background-color: #fafafa;
+}
+
+.header__navbar-user-item--separate {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header__navbar-user-item a {
@@ -91,7 +99,7 @@
 .header__navbar-item,
 .header__navbar-item-link {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--white-color);
     text-decoration: none;
     font-weight: 300;
@@ -140,6 +148,7 @@
 .header__navbar-title-no-pointer {
     color: var(--white-color);
     cursor: text;
+    margin-right: 3px;
 }
 
 /* Header qr */
@@ -197,7 +206,7 @@
     background-color: var(--white-color);
     border: 1px solid #d3d3d3;
     cursor: default;
-    transform-origin: calc(100% - 20px) top;
+    transform-origin: calc(100% - 32px) top;
     animation: headerNotifyGrowth ease-in 0.2s; 
     will-change: transform, animation;
     display: none;
@@ -480,6 +489,11 @@
 
 .header__logo {
     width: 200px;
+}
+
+.header__logo-img-link {
+    text-decoration: none;
+    color: transparent;
 }
 
 .header__logo-img {
