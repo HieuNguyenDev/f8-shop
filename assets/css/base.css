@@ -81,6 +81,7 @@ html {
 /* Modal Layout */
 .modal {
     position: fixed;
+    z-index: 1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -129,4 +130,47 @@ html {
 
 .btn.btn--size-s {
     height: 32px;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: #fb6445;
+}
+
+.pagination-item--disable .pagination-item__link {
+    cursor: default;
+}
+
+.pagination-item__link {
+    --height: 30px;
+    display: block;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-decoration: none;
+    font-size: 2rem;
+    color: #939393;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.pagination-item__icon {
+
 }
