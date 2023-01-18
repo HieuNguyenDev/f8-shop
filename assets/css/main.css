@@ -1,3 +1,7 @@
+.app {
+    overflow: hidden;
+}
+
 .header {
     position: fixed;
     top: 0;
