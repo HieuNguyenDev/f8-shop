@@ -118,4 +118,7 @@
         min-width: 38px;
         font-size: 1.6rem;
     }
+    .header__logo-img {
+        width: 110px;
+    }
 }
