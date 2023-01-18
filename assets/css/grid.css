@@ -16,19 +16,9 @@
     margin-right: -4px;
 }
 
-.row.no-gutters {
-    margin-left: 0;
-    margin-right: 0;
-}
-
 .col {
     padding-left: 4px;
     padding-right: 4px;
-}
-
-.row.no-gutters .col {
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .c-0 {
@@ -295,6 +285,11 @@
     .row.sm-gutter .col {
         padding-left: 5px;
         padding-right: 5px;
+    }
+
+    .row.sm-gutter .col {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .l-0 {

@@ -1332,6 +1332,7 @@ i.product-item__like-icon-fill {
 }
 
 .product-item__sold {
+    color: #333;
     margin-left: 10px;
     font-size: 1.2rem;
 }
