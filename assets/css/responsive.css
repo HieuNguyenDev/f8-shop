@@ -52,6 +52,10 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+    :root {
+        --header-height: 54px;
+        --navbar-height: 0px;
+    }
     .hide-on-mobile {
         display: none;
     }
@@ -125,5 +129,12 @@
     /* footer */
     .footer-content {
         padding-left: 12px;
+    }
+    .footer-heading{
+        text-align: center;
+    }
+    .footer-item__link,
+    .footer__download  {
+        justify-content: center;
     }
 }
