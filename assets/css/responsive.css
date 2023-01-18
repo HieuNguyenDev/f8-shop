@@ -1,3 +1,10 @@
+/* PC */
+@media (min-width: 1024px) {
+    .hide-on-pc {
+        display: none;
+    }
+}
+
 /* Mobile and tablet */
 @media (max-width: 1023px) {
     :root {
@@ -7,6 +14,22 @@
     .hide-on-mobile-tablet {
         display: none;
     }
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+    .header__cart-list::before {
+        display: none;
+    }
+    .app__container {
+        margin-top: calc(var(--header-height) + var(--header-sort-height));
+    } 
+    .header__sort-list {
+        display: flex;
+    }
 }
 
 /* Tablet */
@@ -14,11 +37,81 @@
     .hide-on-tablet {
         display: none;
     }
+
+    .header__cart {
+        width: 80px;
+        text-align: right;
+    }
+    .header__cart-name {
+        max-width: 400px;
+    }
 }
 
 /* Mobile */
 @media (max-width: 739px) {
     .hide-on-mobile {
         display: none;
+    }
+    .header__cart-name {
+        max-width: 300px;
+    }
+    .header__menu {
+        display: block;
+    }
+    .header__search {
+        position: fixed;
+        z-index: 11;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        display: none;
+        animation: showHeaderSearchMobile linear 0.25s;
+     }
+    .header__mobile-search-checkbox:checked ~ .header__search {
+        display: flex;
+    }
+    @keyframes showHeaderSearchMobile {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-height) + var(--header-sort-height));
+        left: 0;
+        width: 100%;
+    }
+    .header__menu-mobile-search {
+        
+    }
+    .header__menu-mobile-search-icon {
+        padding: 16px;
+        font-size: 1.8rem;
+        color: #fff;
+    }
+    .header__logo,
+    .header__cart {
+        width: unset;
+    }
+    .header__cart-icon-wrap {
+        margin: 26px;
+    }
+    .header__cart-icon {
+        font-size: 1.8rem;
+    }
+    .header__cart-name {
+        max-width: 180px;
+    }
+    .header__cart-footer-text {
+        display: none;
+    }
+    .header__cart-footer-btn {
+        width: 100%;
+        height: 48px;
     }
 }

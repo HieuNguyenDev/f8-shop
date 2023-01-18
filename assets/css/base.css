@@ -8,6 +8,7 @@
     --header-height: 120px;
     --navbar-height: 30px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-height: 46px;
 }
 
 * {
@@ -110,6 +111,7 @@ html {
     height: 34px;
     text-decoration: none;
     border: none;
+    border-radius: 2px;
     outline: none;
     background-color: #fff;
     color: #333;

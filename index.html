@@ -154,7 +154,45 @@
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <!-- mobile menu -->
+                    <label for="header__menu-mobile-input" class="header__menu">
+                        <i class="header__menu-icon fa-solid fa-bars"></i>
+                        <input type="checkbox" id="header__menu-mobile-input" class="header__menu-mobile-input">
+                        <label for="header__menu-mobile-input" class="header__menu-overlay"></label>
+                        <div class="header__menu-list-wrap">
+                            <label for="header__menu-mobile-input" class="header__menu-btn-close">
+                                <i class="header__menu-btn-close-icon fa-solid fa-xmark"></i>
+                            </label>
+                            <ul class="header__menu-list">
+                                <li class="header__menu-item">
+                                    <a href="" class="header__menu-link">
+                                        <i class="header__menu-link-icon fa-solid fa-house"></i>
+                                        Trang chủ
+                                    </a>
+                                </li>
+                                <li class="header__menu-item">
+                                    <a href="" class="header__menu-link">
+                                        <i class="header__menu-link-icon fa-sharp fa-solid fa-user-plus"></i>
+                                        Đăng ký
+                                    </a>
+                                </li>
+                                <li class="header__menu-item">
+                                    <a href="" class="header__menu-link">
+                                        <i class="header__menu-link-icon fa-solid fa-right-to-bracket"></i>
+                                        Đăng nhập
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+                    <!-- mobile search -->
+                    <label for="header__menu-mobile-search" class="hide-on-pc hide-on-tablet">
+                        <i class="header__menu-mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+                    <input type="checkbox" hidden id="header__menu-mobile-search" class="header__mobile-search-checkbox">
+
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-img-link">
                             <img src="./assets/img/logo/hieustore-logo.png" alt="" class="header__logo-img">
                         </a>
@@ -188,7 +226,9 @@
                     <div class="header__cart">
                         <div class="header__cart-icon-wrap">
                             <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                            <span class="header__cart-icon-quantity">6</span>
+                            <div class="header__cart-icon-quantity-wrap">
+                                <span class="header__cart-icon-quantity">6</span>
+                            </div>
                             <!-- no cart: header__cart-list--no-cart  -->
                             <div class="header__cart-list">
                                 <!-- no cart -->
@@ -308,16 +348,144 @@
                                             </div>
                                         </a>
                                     </li>
+                                    <li class="header__cart-item">
+                                        <a href="" class="header__cart-item-link">
+                                            <img src="./assets/img/products/26/1.jpg" alt="" class="header__cart-item-img">
+                                            <div class="header__cart-info">
+                                                <div class="header__cart-head">
+                                                    <span class="header__cart-name">Quần shorts nam thoáng mát cho mùa hè</span>
+                                                    <div class="header__cart-price-wrap">
+                                                        <span class="header__cart-price">145.000đ</span>
+                                                        <span class="header__cart-multiply">x</span>
+                                                        <span class="header__cart-quantity">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__cart-body">
+                                                    <span class="header__cart-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <a href="" class="header__cart-item-link">
+                                            <img src="./assets/img/products/28/1.jpg" alt="" class="header__cart-item-img">
+                                            <div class="header__cart-info">
+                                                <div class="header__cart-head">
+                                                    <span class="header__cart-name">Quần Short Đùi Kaki CARAMEN Form Trên Gối Co
+                                                        Giãn Lưng Thun Thoải Mái</span>
+                                                    <div class="header__cart-price-wrap">
+                                                        <span class="header__cart-price">99.000đ</span>
+                                                        <span class="header__cart-multiply">x</span>
+                                                        <span class="header__cart-quantity">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__cart-body">
+                                                    <span class="header__cart-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <a href="" class="header__cart-item-link">
+                                            <img src="./assets/img/products/27/2.jpg" alt="" class="header__cart-item-img">
+                                            <div class="header__cart-info">
+                                                <div class="header__cart-head">
+                                                    <span class="header__cart-name">Quần short thun nam vải chân cua mềm mịn, thoáng
+                                                        mát MZFQS01 – Mazify</span>
+                                                    <div class="header__cart-price-wrap">
+                                                        <span class="header__cart-price">248.000đ</span>
+                                                        <span class="header__cart-multiply">x</span>
+                                                        <span class="header__cart-quantity">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__cart-body">
+                                                    <span class="header__cart-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <a href="" class="header__cart-item-link">
+                                            <img src="./assets/img/products/31/1.jpg" alt="" class="header__cart-item-img">
+                                            <div class="header__cart-info">
+                                                <div class="header__cart-head">
+                                                    <span class="header__cart-name">Quần Jeans nam vải kaki chất lượng siêu thoáng mát</span>
+                                                    <div class="header__cart-price-wrap">
+                                                        <span class="header__cart-price">285.000đ</span>
+                                                        <span class="header__cart-multiply">x</span>
+                                                        <span class="header__cart-quantity">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__cart-body">
+                                                    <span class="header__cart-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <a href="" class="header__cart-item-link">
+                                            <img src="./assets/img/products/94/1_do.png" alt="" class="header__cart-item-img">
+                                            <div class="header__cart-info">
+                                                <div class="header__cart-head">
+                                                    <span class="header__cart-name">Đồng hồ thông minh nam nữ màu đỏ</span>
+                                                    <div class="header__cart-price-wrap">
+                                                        <span class="header__cart-price">1.599.000đ</span>
+                                                        <span class="header__cart-multiply">x</span>
+                                                        <span class="header__cart-quantity">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__cart-body">
+                                                    <span class="header__cart-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <a href="" class="header__cart-item-link">
+                                            <img src="./assets/img/products/114/1_xanh-navy.png" alt="" class="header__cart-item-img">
+                                            <div class="header__cart-info">
+                                                <div class="header__cart-head">
+                                                    <span class="header__cart-name">Mũ lưỡi trai nam mùa xanh navy</span>
+                                                    <div class="header__cart-price-wrap">
+                                                        <span class="header__cart-price">200.000đ</span>
+                                                        <span class="header__cart-multiply">x</span>
+                                                        <span class="header__cart-quantity">1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="header__cart-body">
+                                                    <span class="header__cart-remove">Xóa</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                                 <div class="header__cart-footer">
                                     <p class="header__cart-footer-text">Hiện có <span class="header__cart-footer-total">6</span> sản phẩm trong giỏ hàng của bạn</p>
-                                    <button class="btn btn--primary">Xem giỏ hàng</button>
+                                    <button class="btn btn--primary header__cart-footer-btn">Xem giỏ hàng</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <ul class="header__sort-list">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link header__sort-link--active">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">
+                        Giá
+                        <i class="header__sort-icon fa-solid fa-sort"></i>
+                    </a>
+                </li>
+            </ul>
         </header>
 
         <div class="app__container">
