@@ -137,4 +137,22 @@
     .footer__download  {
         justify-content: center;
     }
+
+    /* Register form */
+    .auth-form {
+        width: 360px;
+    }
+    .auth-form__socials {
+        flex-direction: column;
+    }
+    .auth-form__socials-facebook {
+        width: 100%;
+    }
+    .auth-form__socials-google {
+        width: 100%;
+        margin-top: 16px;
+    }
+    .btn-full-width {
+        width: 100%;
+    }
 }
