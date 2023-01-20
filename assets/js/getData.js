@@ -23,7 +23,7 @@ const getProduct = (url) => {
             return `
                 <div class="col l-2-4 m-4 c-6">
                     <div class="product-item">
-                        <a href="./productDetail.html" class="product-item__link">
+                        <a href="./productDetail.html?id=${product.id}" class="product-item__link">
                             <div class="product-item__img" style="background-image: url(./assets/img/${product.image});"></div>
                             
                             <div class="product-item__info">
@@ -47,13 +47,12 @@ const getProduct = (url) => {
                                         <i class="product-item__rating--star-gold fa-solid fa-star"></i>
                                         <i class="product-item__rating--star-gold fa-solid fa-star"></i>
                                     </div>
-
-                                    <span class="product-item__sold">${product.sold} đã bán</span>
                                 </div>
 
-                                <div class="product-item__origin hide-on-mobile-tablet hide-on-pc">
-                                    <span class="product-item__origin-brand">Coolmate</span>
-                                    <span class="product-item__origin-name">Việt Nam</span>
+                                <div class="product-item__origin">
+                                    <span class="product-item__origin-brand">Hồ Chí Minh</span>
+                                    <span class="product-item__origin-name hide-on-mobile-tablet hide-on-pc">Việt Nam</span>
+                                    <span class="product-item__sold">${product.sold} đã bán</span>
                                 </div>                                                
                             </div>
 

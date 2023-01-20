@@ -33,6 +33,11 @@
     .header__sort-list {
         display: flex;
     }
+    
+    /* product detail */
+    .main-product__info {
+        margin-top: 20px;
+    }
 }
 
 /* Tablet */
@@ -154,5 +159,42 @@
     }
     .btn-full-width {
         width: 100%;
+    }
+
+    .product-detail__btn-content {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 48px;
+        display: flex;
+    }
+
+    .product-detail__btn {
+        height: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        background-color: green;
+    }
+
+    .product-detail__btn i {
+        font-size: 2rem;
+    }
+
+    .product-detail__btn--control {
+        background-color: #00bfa5;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .product-detail__btn-buy {
+        background-color: var(--primary-color);
+        color: #fff;
+        font-size: 1.4rem;
     }
 }
