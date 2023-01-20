@@ -40,3 +40,8 @@ loginForm.addEventListener('click', (e) => {
 for (let returnBtn of returnBtns) {
     returnBtn.addEventListener('click', offAuthenForm)
 }
+
+// format currency
+function formatCurrency(value) {
+    return value.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+}

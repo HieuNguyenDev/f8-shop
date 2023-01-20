@@ -33,6 +33,9 @@
     .header__sort-list {
         display: flex;
     }
+    .header__menu {
+        display: block;
+    }
     
     /* product detail */
     .main-product__info {
@@ -53,6 +56,9 @@
     .header__cart-name {
         max-width: 400px;
     }
+    .header__menu-list-wrap {
+        width: 50%;
+    }
 }
 
 /* Mobile */
@@ -66,9 +72,6 @@
     }
     .header__cart-name {
         max-width: 300px;
-    }
-    .header__menu {
-        display: block;
     }
     .header__search {
         position: fixed;

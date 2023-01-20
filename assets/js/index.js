@@ -3,14 +3,22 @@ const getCategory = (url) => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        let htmls = data.map(category => {
+        let pcHtmls = data.map(category => {
             return `
             <li class="category-item">
                 <a class="category-item-link" href="">${category.name}</a>
             </li>
             ` 
         })
-        document.querySelector('.js-category-list').innerHTML = htmls.join('')
+        let mobileHtmls = data.map(category => {
+            return `
+            <li class="mobile-category__item">
+                <a href="" class="mobile-category__link">${category.name}</a>
+            </li>
+            ` 
+        })
+        document.querySelector('.js-category-list').innerHTML += pcHtmls.join('')
+        document.querySelector('.js-mobile-category__list').innerHTML += mobileHtmls.join('')
     });
 }
 
@@ -23,15 +31,15 @@ const getProduct = (url) => {
             return `
                 <div class="col l-2-4 m-4 c-6">
                     <div class="product-item">
-                        <a href="./productDetail.html?id=${product.id}" class="product-item__link">
-                            <div class="product-item__img" style="background-image: url(./assets/img/${product.image});"></div>
+                        <a href="productDetail.html?id=${product.id}" class="product-item__link">
+                            <div class="product-item__img" style="background-image: url(${product.img});"></div>
                             
                             <div class="product-item__info">
                                 <h4 class="product-item__name">${product.name}</h4>
 
                                 <div class="product-item__price">
-                                    <span class="product-item__price-old">${product.price*2}đ</span>
-                                    <span class="product-item__price-new">${product.price}đ</span>
+                                    <span class="product-item__price-old">${formatCurrency(product.price*2)}</span>
+                                    <span class="product-item__price-new">${formatCurrency(product.price)}</span>
                                 </div>
 
                                 <div class="product-item__action">
