@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <div class="app">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-3">
+                    <nav class="category">
+                        <!-- <img src="../assets/img/user/user.png" alt="" class="header__navbar-user-img"> -->
+                        <h3 class="category-heading">
+                            <i class="category-heading-icon fa-solid fa-list"></i>
+                            Admin
+                        </h3>
+                        <ul class="category-list js-category-list">
+                            <li class="category-item">
+                                <a class="category-item-link" href="">Danh sách sản phẩm</a>
+                            </li>
+                            <li class="category-item">
+                                <a class="category-item-link " href="">Thêm sản phẩm</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col l-9">
+                    <div class="auth-form__container">
+                        <header class="auth-form__header">
+                            <h3 class="auth-form__heading">Thêm sản phẩm</h3>
+                            <!-- <a href="./register.html" class="auth-form__switch-btn">Đăng ký</a> -->
+                        </header>
+        
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="" class="auth-form__label">Tên sản phẩm</label>
+                                <input type="text" class="auth-form__input" placeholder="Tên sản phẩm" />
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="" class="auth-form__label">Giá</label>
+                                <input type="number" class="auth-form__input" placeholder="Giá" />
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="" class="auth-form__label">Ảnh</label>
+                                <input type="file" class="auth-form__input" />
+                            </div>
+                        </div>
+                        
+                        <div class="auth-form__controls">
+                            <button class="btn btn--primary btn-full-width">Thêm sản phẩm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

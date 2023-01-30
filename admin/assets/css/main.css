@@ -1,0 +1,27 @@
+.app {
+    margin-top: 36px;
+}
+
+.auth-form__container {
+    background-color: #f7f7f7;
+    padding-bottom: 24px;
+}
+
+.auth-form__controls {
+    margin-top: 20px;
+}
+
+.auth-form__group {
+    border: unset;
+}
+
+.auth-form__label {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.auth-form__input {
+    width: 100%;
+    margin: 12px 0;
+    border: 1px solid #dbdbdb;
+}

@@ -79,6 +79,7 @@
         top: var(--header-height);
         left: 0;
         width: 100%;
+        height: 46px;
         display: none;
         animation: overlay linear 0.25s;
      }

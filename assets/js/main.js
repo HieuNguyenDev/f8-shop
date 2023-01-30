@@ -26,7 +26,7 @@ registerBtn.addEventListener('click', onRegisterForm)
 
 loginBtn.addEventListener('click', onLoginForm)
 
-modal.addEventListener('click', offAuthenForm)
+// modal.addEventListener('click', offAuthenForm)
 
 RegisterForm.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -44,4 +44,14 @@ for (let returnBtn of returnBtns) {
 // format currency
 function formatCurrency(value) {
     return value.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+}
+
+// prevent default header__search-history
+var ulHistorySearch = document.querySelector('.header__search-history-list')
+ulHistorySearch.onmousedown = function(e) {
+    e.preventDefault()
+}
+ulHistorySearch.onclick = function(e) {
+    e.preventDefault()
+    console.log(e.target);
 }
