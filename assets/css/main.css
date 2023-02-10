@@ -1280,13 +1280,14 @@
 
 .product-item__price {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     margin-top: 10px;
 }
 
 .product-item__price-old {
-    margin-right: 10px;
-    font-size: 1.4rem;
+    margin: 0 10px 10px 0;
+    font-size: 1.2rem;
     text-decoration: line-through;
     color: var(--text-color);
 }
@@ -1517,7 +1518,7 @@ i.product-item__like-icon-fill {
     width: 48px;
     height: 48px;
     border: 4px solid;
-    border-color: #fff #fff #fff transparent;
+    border-color: #fff transparent #fff transparent;
     border-radius: 50%;
     animation: loading 1s linear infinite;
 }

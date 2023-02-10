@@ -22,10 +22,6 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    user-select: none;
-}
-
 @keyframes fadeIn {
     0% {
         opacity: 0;

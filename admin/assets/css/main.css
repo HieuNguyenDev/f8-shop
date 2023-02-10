@@ -25,3 +25,18 @@
     margin: 12px 0;
     border: 1px solid #dbdbdb;
 }
+
+table, td, th {
+    border: 1px solid #dbdbdb;
+    font-size: 1.4rem;
+    padding: 8px 16px;
+}
+
+table tbody tr {
+    height: 102px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}

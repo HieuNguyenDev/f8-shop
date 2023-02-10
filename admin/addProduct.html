@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Add product</title>
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +23,11 @@
                         <!-- <img src="../assets/img/user/user.png" alt="" class="header__navbar-user-img"> -->
                         <h3 class="category-heading">
                             <i class="category-heading-icon fa-solid fa-list"></i>
-                            Admin
+                            <a href="./index.html">Admin</a>
                         </h3>
                         <ul class="category-list js-category-list">
                             <li class="category-item">
-                                <a class="category-item-link" href="./addProduct.html">Danh sách sản phẩm</a>
+                                <a class="category-item-link" href="">Danh sách sản phẩm</a>
                             </li>
                             <li class="category-item">
                                 <a class="category-item-link " href="">Thêm sản phẩm</a>
@@ -38,29 +38,34 @@
                 <div class="col l-9">
                     <div class="auth-form__container">
                         <header class="auth-form__header">
-                            <h3 class="auth-form__heading">Danh sách sản phẩm</h3>
+                            <h3 class="auth-form__heading">Thêm sản phẩm</h3>
+                            <!-- <a href="./register.html" class="auth-form__switch-btn">Đăng ký</a> -->
                         </header>
-
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Ảnh</th>
-                                <th scope="col">Tên sản phẩm</th>
-                                <th scope="col">Giá</th>
-                                <!-- <th scope="col">Mô tả</th> -->
-                                <th scope="col">Tùy chọn</th>
-                              </tr>
-                            </thead>
-                            <tbody id="products-block">
-                            </tbody>
-                          </table>
+        
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="" class="auth-form__label">Tên sản phẩm</label>
+                                <input type="text" class="auth-form__input" placeholder="Tên sản phẩm" />
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="" class="auth-form__label">Giá</label>
+                                <input type="number" class="auth-form__input" placeholder="Giá" />
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="" class="auth-form__label">Ảnh</label>
+                                <input type="file" class="auth-form__input" />
+                            </div>
+                        </div>
+                        
+                        <div class="auth-form__controls">
+                            <button class="btn btn--primary btn-full-width">Thêm sản phẩm</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/addData.js"></script>
 </body>
 </html>

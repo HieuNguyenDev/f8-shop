@@ -1,15 +1,22 @@
-function getCategories (resolve) {
-    const url = 'https://api-firebase-8b76a-default-rtdb.asia-southeast1.firebasedatabase.app/categories.json' 
-    fetch(url)
-    .then(res => res.json())
-    .then(categories => resolve(categories));
+const urlApi = {
+    category: 'https://api-firebase-8b76a-default-rtdb.asia-southeast1.firebasedatabase.app/categories.json',
+    products: 'https://api-firebase-8b76a-default-rtdb.asia-southeast1.firebasedatabase.app/products.json' 
 }
 
-const getProducts = (resolve) => {
-    const url = 'https://api-firebase-8b76a-default-rtdb.asia-southeast1.firebasedatabase.app/products.json'
-    fetch(url)
-    .then(res => res.json())
-    .then(data => resolve(data));
+function getCategories () {
+    return new Promise(resolve => {
+        fetch(urlApi.category)
+        .then(res => res.json())
+        .then(categories => resolve(categories));
+    })
+}
+
+const getProducts = () => {
+    return new Promise(resolve => {
+        fetch(urlApi.products)
+        .then(res => res.json())
+        .then(data => resolve(data));
+    })
 }
 
 function renderCategories(categories) {
@@ -86,18 +93,10 @@ function renderProducts(products) {
     document.querySelector('.js-products').innerHTML = htmls.join('')
 }
 
-var products = new Promise((resolve, reject) => {
-    getProducts(resolve) 
-})
-
-var categories = new Promise((resolve, reject) => {
-    getCategories(resolve) 
-})
-
 var loadingElement = document.querySelector('.overlay')
 loadingElement.classList.add('run')
 
-Promise.all([products, categories])
+Promise.all([getProducts(), getCategories()])
     .then(([products, categories]) => {
         renderProducts(products)
         renderCategories(categories)
