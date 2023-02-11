@@ -198,7 +198,7 @@ function getProduct(url) {
                                         <div class="product__content-img" style="background-image: url(${data[id].img});"></div>
                                     </div>
                                 </div>  
-                            </div>d
+                            </div>
                             <!-- <div class="col l-2 m-12 c-12">
                                 <div class="product__top">
                                     <span>Top sản phẩm bán chạy</span>
@@ -219,7 +219,6 @@ function getProduct(url) {
                     </div>
                 `
             const html = data[id].images.map((img) => {
-                console.log(img);
                 return `
                     <div class="col l-2-4 m-2 c-2">
                         <div class="main-product__sub-img" style="background-image: url(${img.img})"></div>

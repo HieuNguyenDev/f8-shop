@@ -1073,6 +1073,10 @@
     padding: 0 8px;
 }
 
+.mobile-category__item:active {
+    opacity: 0.6;
+}
+
 .mobile-category__item:nth-of-type(3n + 1) {
     background-color: #87AFD8;
 }
@@ -1240,6 +1244,10 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     transition: transform ease-in-out 0.1s;
     -webkit-tap-highlight-color: transparent;
+}
+
+.product-item:active {
+    opacity: 0.6;
 }
 
 .product-item:hover {

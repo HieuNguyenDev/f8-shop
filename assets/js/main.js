@@ -28,13 +28,13 @@ loginBtn.addEventListener('click', onLoginForm)
 
 // modal.addEventListener('click', offAuthenForm)
 
-RegisterForm.addEventListener('click', (e) => {
+RegisterForm ? RegisterForm.addEventListener('click', (e) => {
     e.stopPropagation();
-})
+}) : {}
 
-loginForm.addEventListener('click', (e) => {
+loginForm ? loginForm.addEventListener('click', (e) => {
     e.stopPropagation();
-})
+}) : {}
 
 // turn off form when click return button
 for (let returnBtn of returnBtns) {

@@ -6,14 +6,21 @@ const categoryItems = $$('.category-item')
 const homeFilterBtns = $$('.home-filter__btn')
 const newFilterBtn = $('.new-filter-btn')
 const soldOutFilterBtn = $('.sold-out-btn')
+const mobileNewFilterBtn = $('.mobile-new-filter-btn')
+const mobileOutFilterBtn = $('.mobile-sold-out-btn')
+const mobileFilterPriceBtn = $('.mobile-filter-price-btn')
 const categoryList = $('.js-category-list')
+const mobileCategory = $('.mobile-category__list')
 const sortPriceIncrease = $('.sort-price-increase')
+const searchInput = $('.header__search-input')
 const searchBtn = $('.header__search-btn')
 const slider = $('.slider-block')
 
 const app = {
     isNewFilterBtn: false,
     isSoldOutFilterBtn: false,
+    isSortPrice: false,
+    config: JSON.parse(localStorage.getItem('HieuStore Config')) || [],
     urlApi: {
         category: 'https://api-firebase-8b76a-default-rtdb.asia-southeast1.firebasedatabase.app/categories.json',
         products: 'https://api-firebase-8b76a-default-rtdb.asia-southeast1.firebasedatabase.app/products.json' 
@@ -32,6 +39,10 @@ const app = {
             path: '3.png'
         },
     ],
+    setConfig(key, value) {
+        this.config[key] = value
+        localStorage.setItem('HieuStore Config', JSON.stringify(this.config))
+    },
     handleEvents() {
         const _this = this
 
@@ -39,7 +50,13 @@ const app = {
         categoryList.onclick = (e) => {
             if (e.target.closest('.category-item')) {
                 const idCategory = Number(e.target.getAttribute('id-category'))
-                console.log(idCategory);
+                _this.filterCategory(idCategory)
+            }
+        }
+
+        mobileCategory.onclick = (e) => {
+            if (e.target.closest('.mobile-category__item')) {
+                const idCategory = Number(e.target.getAttribute('id-category'))
                 _this.filterCategory(idCategory)
             }
         }
@@ -49,7 +66,7 @@ const app = {
             console.log(e.target);
         }
 
-        // filter new product
+        // filter new product PC
         newFilterBtn.onclick = () => {
             $('.home-filter__btn.btn--active').classList.remove('btn--active')
             newFilterBtn.classList.add('btn--active')
@@ -57,7 +74,14 @@ const app = {
             _this.sortNewProduct(_this.isNewFilterBtn)
         }
 
-        // sold out
+        mobileNewFilterBtn ? mobileNewFilterBtn.onclick = () => {
+            $('.header__sort-link.header__sort-link--active').classList.remove('header__sort-link--active')
+            mobileNewFilterBtn.classList.add('header__sort-link--active')
+            _this.isNewFilterBtn = true
+            _this.sortNewProduct(_this.isNewFilterBtn)
+        } : {}
+
+        // sold out PC
         soldOutFilterBtn.onclick = () => {
             $('.home-filter__btn.btn--active').classList.remove('btn--active')
             soldOutFilterBtn.classList.add('btn--active')
@@ -65,9 +89,28 @@ const app = {
             _this.sortSoldOutProduct(_this.isSoldOutFilterBtn)
         }
 
+        mobileOutFilterBtn ? mobileOutFilterBtn.onclick = () => {
+            $('.header__sort-link.header__sort-link--active').classList.remove('header__sort-link--active')
+            mobileOutFilterBtn.classList.add('header__sort-link--active')
+            _this.isSoldOutFilterBtn = true
+            _this.sortSoldOutProduct(_this.isSoldOutFilterBtn)
+        } : {}
+
+        // sort price
+        mobileFilterPriceBtn.onclick = () => {
+            $('.header__sort-link.header__sort-link--active').classList.remove('header__sort-link--active')
+            mobileFilterPriceBtn.classList.add('header__sort-link--active')
+
+            _this.isSortPrice = !_this.isSortPrice
+            _this.isSortPrice ? _this.sortPriceAsc() : _this.sortPriceDesc()
+        }
+
         // search
         searchBtn.onclick = () => {
-            window.location.href = 'product.html'
+            const key = searchInput.value.trim()
+            _this.setConfig('key-search', key)
+            _this.search(key)
+            // window.location.href = 'product.html'
         }
     },
     getCategories () {
@@ -118,6 +161,27 @@ const app = {
                 })
         }
     },
+    sortPriceAsc() {
+        if (this.isSortPrice) {
+            this.getProducts()
+                .then(products => {
+                    const newProducts = products.sort((a, b) => b.price - a.price)
+                    this.renderProducts(newProducts)
+                })
+        }
+    },
+    sortPriceDesc() {
+        if (!this.isSortPrice) {
+            this.getProducts()
+                .then(products => {
+                    const newProducts = products.sort((a, b) => a.price - b.price)
+                    this.renderProducts(newProducts)
+                })
+        }
+    },
+    search(key) {
+        console.log(key);
+    },
     renderSlide() {
         const htmls = this.slides.map(slide => {
             return `
@@ -140,7 +204,7 @@ const app = {
         let mobileHtmls = categories.map(category => {
             return `
             <li class="mobile-category__item">
-                <a class="mobile-category__link">${category.name}</a>
+                <a class="mobile-category__link" id-category="${category.id}">${category.name}</a>
             </li>
             ` 
         })
