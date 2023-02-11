@@ -8,36 +8,18 @@ function getUrlVars(url) {
 }
 
 const id = Number(getUrlVars(url)['id']) - 1;
-console.log(typeof id);
 function getProduct(url) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            console.log(data[id].name);
-            const html = `
+            const htmls = `
                     <div class="app__content">
                         <div class="row detail-product__content">
                             <div class="col l-5 m-12 c-12">
-                                <div class="main-product__img" style="background-image: url(${data[id].img})"></div>
+                                <div class="main-product__img" style="background-image: url(${data[id].images[0].img})"></div>
                                 <div class="main-product__sub-img-wrap">
                                     <div class="grid">
-                                        <div class="row">
-                                            <div class="col l-2-4 m-2 c-2">
-                                                <div class="main-product__sub-img main-product__sub-img--active" style="background-image: url(./assets/img/products/26/1.jpg)"></div>
-                                            </div>
-                                            <div class="col l-2-4 m-2 c-2">
-                                                <div class="main-product__sub-img" style="background-image: url(./assets/img/products/26/2.jpg)"></div>
-                                            </div>
-                                            <div class="col l-2-4 m-2 c-2">
-                                                <div class="main-product__sub-img" style="background-image: url(./assets/img/products/27/1.jpg)"></div>
-                                            </div>
-                                            <div class="col l-2-4 m-2 c-2">
-                                                <div class="main-product__sub-img" style="background-image: url(./assets/img/products/27/2.jpg)"></div>
-                                            </div>
-                                            <div class="col l-2-4 m-2 c-2">
-                                                <div class="main-product__sub-img" style="background-image: url(./assets/img/products/26/1.jpg)"></div>
-                                            </div>
-                                        </div>
+                                        <div class="row images-block"></div>
                                     </div>
                                 </div>
                                 
@@ -83,7 +65,7 @@ function getProduct(url) {
                                             đánh giá
                                         </span>
                                         <span class="main-product__detail-sold main-product__detail--separate">
-                                            <span class="main-product__detail-sold-number">21</span>
+                                            <span class="main-product__detail-sold-number">${data[id].sold}</span>
                                             đã bán
                                         </span>
                                         <!-- <span class="main-product__detail-report">Tố cáo</span> -->
@@ -134,12 +116,25 @@ function getProduct(url) {
                                         </div>
                                         <div class="row main-product__option-wrap">
                                             <div class="col l-2">
-                                                <span class="main-product__option-heading">Màu áo</span>
+                                                <span class="main-product__option-heading">Màu sắc</span>
                                             </div>
                                             <div class="col l-10">
                                                 <span class="main-product__option-item">Đen</span>
                                                 <span class="main-product__option-item">Trắng</span>
                                                 <span class="main-product__option-item">Xám</span>
+                                            </div>
+                                        </div>
+                                        <div class="row main-product__option-wrap">
+                                            <div class="col l-2">
+                                                <span class="main-product__option-heading">Kích thước</span>
+                                            </div>
+                                            <div class="col l-10">
+                                                <span class="main-product__option-item">38</span>
+                                                <span class="main-product__option-item">39</span>
+                                                <span class="main-product__option-item">40</span>
+                                                <span class="main-product__option-item">41</span>
+                                                <span class="main-product__option-item">42</span>
+                                                <span class="main-product__option-item">43</span>
                                             </div>
                                         </div>
             
@@ -195,19 +190,15 @@ function getProduct(url) {
                         </div> 
                         
                         <div class="row product__info">
-                            <div class="col l-10 m-12 c-12">
+                            <div class="col l-12 m-12 c-12">
                                 <div class="product__content">
                                     <h3 class="product__content-heading">Mô tả sản phẩm</h3>
                                     <div class="product__content-wrap">
-                                        <p class="product__content-sub-heading">
-                                            Faviti mang đến trải nghiệm tốt nhất cho bạn
-                                            Áo len nam cổ lọ faviti chính là sản phẩm bán chạy nhất trong 5 năm qua. Áo len nam cổ lọ nhà mình được làm Bằng công nghệ kéo sợi và xử lý xơ hiện đại giúp chất liệu len lông cừu mềm mịn hơn hẳn dòng áo len khác trên thị trường và giữ ấm tốt nhất hiện nay. Chúng mình đã nghiên cứu để cho ra những màu áo len nam cổ lọ hot nhất hiện nay giúp anh chị em dễ dàng phối đồ khi đi chơi hay đi làm. 
-                                            Đây chắc chắn là item không thể thiếu trong tủ đồ của các bạn để có một mùa đông ấm áp
-                                        </p>
-                                        <div class="product__content-img" style="background-image: url(./assets/img/products/28/1.jpg);"></div>
+                                        <p class="product__content-sub-heading">${data[id].description ? data[id].description : ''}</p>
+                                        <div class="product__content-img" style="background-image: url(${data[id].img});"></div>
                                     </div>
-                                </div>
-                            </div>
+                                </div>  
+                            </div>d
                             <!-- <div class="col l-2 m-12 c-12">
                                 <div class="product__top">
                                     <span>Top sản phẩm bán chạy</span>
@@ -216,18 +207,27 @@ function getProduct(url) {
                         </div>
             
                         <!-- other products -->
-                        <div class="row">
-                            <div class="col l-10">
+                        <!-- <div class="row">
+                            <div class="col l-12">
                                 <div class="other-product">
                                     <h3 class="product__content-heading">Các sản phẩm khác của shop</h3>
                                     <div class="row sm-gutter js-products">
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 `
-            document.querySelector('.js-detail-product').innerHTML = html
+            const html = data[id].images.map((img) => {
+                console.log(img);
+                return `
+                    <div class="col l-2-4 m-2 c-2">
+                        <div class="main-product__sub-img" style="background-image: url(${img.img})"></div>
+                    </div>
+                `
+            })
+            document.querySelector('.js-detail-product').innerHTML = htmls
+            document.querySelector('.images-block').innerHTML = html.join('')
         })
 }
 

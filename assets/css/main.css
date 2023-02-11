@@ -931,7 +931,7 @@
 }
 
 .app__content {
-    padding: 36px 0;
+    padding: 32px 0;
 }
 
 .category {
@@ -974,6 +974,7 @@
 }
 
 .category-item-link {
+    cursor: pointer;
     position: relative;
     right: 0;
     display: block;

@@ -15,11 +15,15 @@
 .main-product__sub-img {
     cursor: pointer;
     margin-top: 10px;
+    transition: transform ease-in 0.1s;
 }
 
-.main-product__sub-img--active,
-.main-product__sub-img:hover {
+.main-product__sub-img--active {
     border: 2px solid var(--primary-color);
+}
+
+.main-product__sub-img:hover {
+    transform: translateY(-4px);
 }
 
 .main-product__img-footer {
