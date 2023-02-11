@@ -97,13 +97,13 @@ const app = {
         } : {}
 
         // sort price
-        mobileFilterPriceBtn.onclick = () => {
+        mobileFilterPriceBtn ? mobileFilterPriceBtn.onclick = () => {
             $('.header__sort-link.header__sort-link--active').classList.remove('header__sort-link--active')
             mobileFilterPriceBtn.classList.add('header__sort-link--active')
 
             _this.isSortPrice = !_this.isSortPrice
             _this.isSortPrice ? _this.sortPriceAsc() : _this.sortPriceDesc()
-        }
+        } : {}
 
         // search
         searchBtn.onclick = () => {
