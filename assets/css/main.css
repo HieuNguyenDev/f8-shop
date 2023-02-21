@@ -372,18 +372,35 @@
 
 .auth-form__group {
     width: 100%;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
     position: relative;
-    border: 1px solid #dbdbdb;
+}
+
+.auth-form__group.invalid .auth-form__input {
+    border: 1px solid var(--primary-color);
+    background-color:rgb(248, 159, 159)
 }
 
 .auth-form__input {
-    width: calc(100% - 40px);
+    width: 100%;
     font-size: 1.4rem;
     padding: 12px 16px;
     outline: none;
     border: none;
     border-radius: 2px;
+    border: 1px solid #dbdbdb;
+}
+
+.form-message {
+    display: none;
+    font-size: 12px;
+    padding: 4px 0 12px 0;
+    display: block;
+    color:var(--primary-color);
+}
+
+.auth-form__group.invalid .form-message {
+    display: block;
 }
 
 .auth-form__input:focus .auth-form__group {
